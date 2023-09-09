@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@latest"></script>
+
 </head>
 
 <body>
@@ -18,11 +20,11 @@
         <div class="bx-bxmenu" id="menu-icon"></div>
 
         <nav class="navbar">
-            <a href="#Inicio" class="active">Inicio</a>
-            <a href="#SobreMi">Sobre Mi</a>
-            <a href="#Educacion">Educacion</a>
-            <a href="#Proyectos">Proyectos</a>
-            <a href="#Contacta">Contacta</a>
+            <a href="#home" class="active">Inicio</a>
+            <a href="#about">Sobre Mi</a>
+            <a href="#education">Educacion</a>
+            <a href="#proyects">Proyectos</a>
+            <a href="#contact">Contacta</a>
         </nav>
 
     </header>
@@ -55,11 +57,264 @@
             <a href="#"><i class='bx bxs-file-pdf' ></i></a>
         </div>
 
-        <div class="home-imhHover"></div>
+        <div class="home-imhHover">
+            <div id="tsparticles" class="tsparticles"></div>
+            <div class="imageDiv"></div>
+        </div>
 
     </section>
-    <!-- <script src="js/script.js"></script> -->
-</body>
 
+    <section class="about" id="about">
+        <h2 class="heading">Sobre <span>Mi</span></h2>
+
+        <div class="about-img">
+            <img src="images/Try3.png" alt="">
+            <span class="circle-spin"></span>
+        </div>
+
+        <div class="about-content">
+            <h3>Fullstack Developer!</h3>
+            <p>Profesional en busca de nuevos retos donde pueda aportar. Siempre en busca de un desempeño excelente y enfocado a los resultados. 
+                Valoro mi creatividad tanto como mis conocimientos técnicos. Me esfuerzo por encontrar soluciones innovadoras y eficientes.</p>
+
+            <p>Me encanta enfrentarme a nuevos retos y problemas mientras persigo nuevas oportunidades a las que se puede llegar bien a través de este perfil o a través de Telegram @Retil.
+                ¡Siempre dispuesto a asistir a charlas y talleres geek en mi ciudad o alrededor de mi país!</p>
+        
+            <div class="btn-box btns">
+                <a href="#" class="btn">Leer Mas</a>
+            </div>
+        
+        
+        </div>
+    </section>
+
+
+    <section class="education" id="education">
+        <h2 class="heading"> Mi <span>Camino</span></h2>
+
+        <div class="education-row">
+            <div class="education-column">
+                <h3 class="title">Educacion</h3>
+
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2014 - 2019</div>
+                            <h3>Grado Ingenieria informatica - Universidad</h3>
+                            <p>TFG - Orca-Python 2.0 - Matrícula de honor.
+                                Asistencia a IV Jornada de Hacking Ético 2015.
+                                Asistencia a Students Developers Meetup 2016.
+                                Asistencia al Congreso RITSI (Congreso de Estudiantes de Ingeniería Informática)Actividades y grupos: TFG - Orca-Python 2.0 - Matrícula de honor. Asistencia a IV Jornada de Hacking Ético 2015. Asistencia a Students Developers Meetup 2016. Asistencia al Congreso RITSI (Congreso de Estudiantes de Ingeniería Informática)
+                                
+                                Ingeniería informática en el campo de la computación.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2020 - 2021</div>
+                            <h3>Signlab Nuevas Tecnologías S.L. - Desarrollador de software</h3>
+                            <p>Encargado del desarrollo y comercialización de proyectos tecnológicos en el ámbito de la sociedad de la información. 
+                                Desarrollador web usando Vue y JavaScrypt.
+                                Programador Android.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>2021 - Actualidad</div>
+                            <h3>Tecnova Ingeniería y Sistemas S.A. - Analista Programador Full-Stack</h3>
+                            <p>Encargado de dar soporte técnico a los hospitales del Servicio Andaluz de Salud (SAS).
+                                Diseño, análisis y desarrollo de Web Components con LitElements.
+                                Desarrollo Back-end y Front-end de servicios REST.
+                                Desarrollo de pruebas unitarias y funcionales con JUnit y Selenium.
+                                Uso de herramientas para el equipo de desarrollo como Sonar, Jenkins o Nexus.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="proyects" id="proyects">
+        <h2 class="heading">Proyectos y <span>Tecnologias</span></h2>
+
+        <div class="proyects-row">
+            <div class="proyects-column">
+                <h3 class="title">Proyectos</h3>
+
+                <div class="proyects-box">
+                    <div class="proyects-content">
+                        <div class="progress">
+                            <h3> Proyecto 1</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyects-box">
+                    <div class="proyects-content">
+                        <div class="progress">
+                            <h3>Proyecto 2</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="proyects-column">
+                <h3 class="title">Tecnologias</h3>
+
+                <div class="proyects-box">
+                    <div class="proyects-content">
+                        <div class="progress">
+                            <div class="tecnologies-imagen">
+                                <i class='bx bxl-javascript'></i>
+                                <i class='bx bxl-java' ></i>
+                                <i class='bx bxl-typescript' ></i>
+                                <i class='bx bxl-vuejs' ></i>
+                                <i class='bx bxl-react' ></i>
+                                <i class='bx bxl-html5' ></i>
+                                <i class='bx bxl-css3' ></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contacta</h2>
+
+        <form action="#">
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" placeholder="Nombre" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Email" required>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="number" placeholder="Telefono de contacto" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Asunto" required>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+            <div class="textarea-field">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Tu mensaje" required></textarea>
+                <span class="focus"></span>
+            </div>
+
+            <div class="btn-box btns">
+                <button type="submit" class="btn">Enviar</button>
+            </div>
+        </form>
+
+    </section>
+
+    <fooer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy, 2023 by Javier | All Right Reverved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </fooer>
+
+
+    <!-- Incluye la biblioteca tsParticles -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        tsParticles.load('tsparticles', {
+        fullScreen: false,
+        background: {
+            color: { 
+                value: '',
+            },
+        },
+        fpsLimit: 120,
+        interactivity: {
+            events: {
+                onClick: {
+                    enable: false,
+                    mode: 'push',
+                },
+                onHover: {
+                    enable: true,
+                    mode: 'repulse',
+                },
+                resize: true,
+            },
+            modes: {
+                push: {
+                    quantity: 50,
+                },
+                repulse: {
+                    distance: 100,
+                    duration: 0.4,
+                },
+            },
+        },
+        particles: {
+            color: { 
+                value: '#00abf0',
+            },
+            links: {
+                color: '#f5d293',
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1,
+            },
+            collisions: {
+                enable: true,
+            },
+            move: {
+                directions: 'none',
+                enable: true,
+                outModes: {
+                    default: 'bounce',
+                },
+                random: false,
+                speed: 1,
+                straight: false,
+            },
+            number: {
+                density: {
+                    enable: true,
+                    area: 800,
+                },
+                value: 120,
+            },
+            opacity: {
+                value: 0.5,
+            },
+            shape: {
+                type: 'circle',
+            },
+            size: {
+                value: {min: 1, max: 5},
+            },
+        },
+        detectRetina: true, 
+    });
+
+    </script>
+</body>
 
 </html>
