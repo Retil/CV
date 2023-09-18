@@ -12,7 +12,8 @@
 }
 
 :root {
-    --bg-bolor: #081b29;
+    --bg-bolor: #001424;
+    /* #081b29 */
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
@@ -57,9 +58,14 @@ body {
 }
 
 .logo {
+    position: relative;
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
+}
+
+.navbar {
+    position: relative;
 }
 
 .navbar a{
@@ -76,7 +82,8 @@ body {
 }
 
 #menu-icon {
-    font-size: 3.5rem;
+    position: relative;
+    font-size: 3.6rem;
     color: var(--text-color);
     cursor: pointer;
     display: none;
@@ -91,16 +98,19 @@ section{
     display: flex;
     align-items: center;
     padding: 0 9%;
-    /* background: url('/images/JaviFondo.jpg') no-repeat; */
+    background: url('/images/Fondo\ 2\ new.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .home-content {
     max-width: 60rem;
+    z-index: 99;
 }
 
 .home-content h1 {
+    position: relative;
+    display: inline-block;
     font-size: 6.6rem;
     font-weight: 700;
     line-height: 1.3;
@@ -116,9 +126,29 @@ section{
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+.home-content .text-animate h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
 }
 
 .home-content p {
+    position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
 }
@@ -248,13 +278,13 @@ section{
 .home-imhHover {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 45%;
-    height: 90%; /* Esto asegura que sea un círculo */
+    left: 55%;
+    width: 30vw;
+    height: 30vw; 
     background: transparent;
-    border-radius: 50%; /* Esto convierte el div en un círculo */
-    transform: translateY(-50%); /* Centra el círculo verticalmente */
-    transition: 3s;
+    border-radius: 50%; 
+    transform: translateY(-50%); 
+    /* transition: 3s; */
     overflow: hidden;
 }
 
@@ -267,21 +297,20 @@ section{
     padding: 0;
     margin: 0;
     border-radius: 50%;
-    z-index: -1; /* if you use -1 you have to set to `"window"` the interactivity.detectsOn property */
+    z-index: 0; 
 }
 
 .imageDiv {
-    background: url('/images/Try6.png') no-repeat;
+    background: url('/images/javier2\ new.png') no-repeat center center;
+    background-size: cover;
     z-index: 10;
     position: absolute;
-    left: -100px;
-    width: 100%;
-    height: 100%;
-}
-
-.home-imhHover:hover {
-    opacity: .8;
-    background-color: var(--bg-bolor);
+    top: 50%;
+    left: 50%;
+    width: 30vw; 
+    height: 30vw;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
 }
 
 .about {
@@ -296,6 +325,7 @@ section{
 }
 
 .heading {
+    position: relative;
     font-size: 5rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -333,6 +363,7 @@ span {
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content {
@@ -649,6 +680,53 @@ span {
     color: var(--main-color);
 } 
 
+.animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #001424;
+    z-index: 98;
+}
+
+.animate.home-img {
+    width: 100%;
+}
+
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home.show-animate .animate {
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
+
+.animate.scroll {
+    transition: 1s ease;
+    animation-delay: calc(.3s / var(--i));
+    animation: none;
+
+}
+
+.about.show-animate .animate.scroll {
+    animation-delay: calc(.3s * var(--i));
+    width: 0;
+}
+
+@media (max-width: 1600px) {
+    .home::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5); 
+        pointer-events: none; 
+    } 
+}
+
 @media (max-width: 1200px) {
     html{
         font-size: 55%;
@@ -673,7 +751,22 @@ span {
     }
 }
 
+@media (max-width: 1600px) {
+    .home-imhHover, .imageDiv {
+        width: calc(480px + 0.12019 * (1600 - 100vw));
+        height: calc(480px + 0.12019 * (1600 - 100vw));
+    }
+}
+
+
 @media (max-width: 768px) {
+
+    .home-imhHover, .imageDiv {
+        width: 40vh;
+        height: 40vh;
+        left: 45%;
+    }
+
     .header {
         background: var(--bg-bolor);
     }
@@ -683,6 +776,156 @@ span {
     }
 
     .navbar {
-        
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+
+    .navbar.active {
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-bolor);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-duration: 0;
+    }
+
+    .navbar.active .active-nav {
+        left: 0;
+        transition-delay: .25s;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translate(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a {
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .home-imhHover  {
+        pointer-events: none;
+        /* background: var(--bg-bolor); */
+        opacity: .6s;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci {
+        width: 160px;
+    }
+
+    .home-sci {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+@media (max-width: 462px) {
+    .home-content h1 {
+        font-size: 5.2rem;
+    }
+
+    .education {
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field{
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 371px) {
+    .home{
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+}
+
+@keyframes homeBgText {
+    0%,10%,100% {
+        background-position: -33rem 0;
+    }
+
+    65%,85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText {
+    0%,10%,100% {
+        width: 0;
+    }
+
+    65%,78%,85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
     }
 }
